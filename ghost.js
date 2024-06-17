@@ -20,7 +20,7 @@ app.listen(PORT, () => {
     console.log(`
 Don't Forget To Give Star
 
- Ghost Session Server running on http://localhost:` + PORT)
+ Naruto Session Server running on http://localhost:` + PORT)
 })
 
 module.exports = app
