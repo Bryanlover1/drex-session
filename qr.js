@@ -8,7 +8,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-	default: Black_Castro,
+	default: Bryan_Tech,
 	useMultiFileAuthState,
 	jidNormalizedUser,
 	Browsers,
@@ -28,23 +28,23 @@ const {
 } = require("node:fs/promises")
 router.get('/', async (req, res) => {
 	const id = makeid();
-	async function GHOST_MD_QR_CODE() {
+	async function NARUTO_MD_QR_CODE() {
 		const {
 			state,
 			saveCreds
 		} = await useMultiFileAuthState('./temp/' + id)
 		try {
-			let Qr_Code_By_Black_Castro = Black_Castro({
+			let Qr_Code_By_Bryan_Tech = Bryab_Tech({
 				auth: state,
 				printQRInTerminal: false,
 				logger: pino({
 					level: "silent"
 				}),
-				browser: Browsers.macOS("Desktop"),
+				browser: Browsers.macOS("Sefari"),
 			});
 
-			Qr_Code_By_Black_Castro.ev.on('creds.update', saveCreds)
-			Qr_Code_By_Black_Castro.ev.on("connection.update", async (s) => {
+			Qr_Code_By_Bryan_Tech.ev.on('creds.update', saveCreds)
+			Qr_Code_By_Bryan_Tech.ev.on("connection.update", async (s) => {
 				const {
 					connection,
 					lastDisconnect,
@@ -56,31 +56,31 @@ router.get('/', async (req, res) => {
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
 					await delay(800);
 				   let b64data = Buffer.from(data).toString('base64');
-				   let session = await Qr_Code_By_Black_Castro.sendMessage(Qr_Code_By_Black_Castro.user.id, { text: '' + b64data });
+				   let session = await Qr_Code_By_Bryan_Tech.sendMessage(Qr_Code_By_Bryan_Tech.user.id, { text: '' + b64data });
 	
-				   let GHOST_MD_TEXT = `
+				   let NARUTO_MD_TEXT = `
 ____________________________
-       𝐌𝐄𝐆𝐀𝐓𝐑𝐎𝐍 
+       𝗕𝗥𝗬𝗔𝗡 𝗧𝗘𝗖𝗛 
 ____________________________
 ╔════◇
-║『 *YOU'VE CHOSEN MEGATRON-BOT* 』
+║『 *YOU'VE CHOSEN NARUTO-BOT* 』
 ║ You've Completed the First Step
 ║ to Deploy a Whatsapp Bot.
 ╚════════════════╝
 ╔═════◇
 ║ 『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
 ║❒ 𝐎𝐰𝐧𝐞𝐫: https://wa.me/254784934065
-║❒ 𝐑𝐞𝐩𝐨: https://github.com/Madmkisii/Megatron-Bot
-║❒ 𝐖𝐚𝐆𝐫𝐨𝐮𝐩: https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P
+║❒ 𝐑𝐞𝐩𝐨: https://github.com/Bryanlover1/Naruto-MD-V1
+║❒ 𝐖𝐚𝐆𝐫𝐨𝐮𝐩: https://chat.whatsapp.com/HsPiKU0POmU6Pbg4SLwi90
 ║ 💜💜💜
 ╚════════════════╝
 Don't Forget To Give Star⭐ To My Repo`
-	 await Qr_Code_By_Black_Castro.sendMessage(Qr_Code_Black_Castro.user.id,{text:GHOST_MD_TEXT},{quoted:session})
+	 await Qr_Code_By_Bryan_Tech.sendMessage(Qr_Code_Bryan_Tech.user.id,{text:NARUTO_MD_TEXT},{quoted:session})
 
 
 
 					await delay(100);
-					await Qr_Code_By_Black_Castro.ws.close();
+					await Qr_Code_By_Bryan_Tech.ws.close();
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
@@ -97,6 +97,6 @@ Don't Forget To Give Star⭐ To My Repo`
 			await removeFile("temp/" + id);
 		}
 	}
-	return await GHOST_MD_QR_CODE()
+	return await NARUTO_MD_QR_CODE()
 });
 module.exports = router
